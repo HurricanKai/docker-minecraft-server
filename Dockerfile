@@ -22,7 +22,8 @@ RUN set -x; wget --no-check-certificate \
         "$(curl "$MINECRAFT_SERVER_DOWNLOAD_URL" | grep launcher.mojang | awk -F\" '{print $2}')" \
         -O "/server.jar"
 RUN chmod +x /server.jar
-# Copy the startup scripts (which also handles automatic updates) ADD start.sh /start.sh
+# Copy the startup scripts (which also handles automatic updates) 
+ADD start.sh /start.sh
 RUN chmod +x /start.sh
 # Run as the "docker" user by default 
 ENV PGID 1000 
