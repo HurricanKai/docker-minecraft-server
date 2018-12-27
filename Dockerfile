@@ -17,7 +17,8 @@ RUN apk --no-cache add \
     ca-certificates \
     bash \
     curl
-# Install the latest Minecraft server RUN set -x; wget --no-check-certificate \
+# Install the latest Minecraft server 
+RUN set -x; wget --no-check-certificate \
         "$(curl "$MINECRAFT_SERVER_DOWNLOAD_URL" | grep launcher.mojang | awk -F\" '{print $2}')" \
         -O "/server.jar"
 RUN chmod +x /server.jar
