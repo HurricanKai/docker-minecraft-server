@@ -1,4 +1,4 @@
-FROM resin/raspberry-pi-alpine
+FROM resin/raspberry-pi-alpine-openjdk
 
 # System variables for use with installation 
 ENV _JAVA_OPTIONS "-XX:+UseG1GC -Djava.security.egd=file:/dev/urandom" 
